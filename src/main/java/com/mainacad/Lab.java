@@ -2,6 +2,7 @@ package com.mainacad;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 
 public class Lab
@@ -9,15 +10,18 @@ public class Lab
     public static void main( String[] args )
     {
         //Создаём системную переменную которая содержит путь к драйверу
-        System.setProperty("webdriver.chrome.driver","/drivers/chromedriverWin.exe");
+        System.setProperty("webdriver.chrome.driver","/drivers/chromedriver.exe");
 
         //Создаём вебдрайвер
-        WebDriver driver = new ChromeDriver();
+        //WebDriver driver = new ChromeDriver();
+        WebDriver driver = new FirefoxDriver();
 
         //Открываем тестовую страницу
         driver.get("https://www.toolsqa.com/automation-practice-form/");
 
         //TODO: Вывести в консоль текст Инфо сообщения
+
+        System.out.println();
 
         //TODO: Вывести в консоль текст заголовка формы ("Practice Automation Form")
 
