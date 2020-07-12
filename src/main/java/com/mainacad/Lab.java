@@ -1,6 +1,7 @@
 package com.mainacad;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import javafx.scene.control.RadioButton;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,6 +12,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class Lab
 {
     private static final By HEADER = By.xpath("//div[@class='main-header']");
+    private static final By FIRSTNAME = By.xpath("/html//input[@id='firstName']");
+   // private static final By RARIO = By.xpath();
 
     public static void main( String[] args )
     {
@@ -31,14 +34,18 @@ public class Lab
         System.out.println("Текст заголовка" + " " + driver.findElement(HEADER).getText());
 
         //TODO: Кликнуть линк Partial Link Test
-        driver.findElement(By.partialLinkText("Forms")).click();
+      //  driver.findElement(By.partialLinkText("Forms")).click();
 
         //TODO: Заполнить поле First name:
+        driver.findElement(FIRSTNAME).sendKeys("Ivan");
 
         //TODO: Заполнить поле Last name:
+        driver.findElement(By.cssSelector("#lastName")).sendKeys("Bob");
+        driver.findElement(By.id("userEmail")).sendKeys("Po4ta@gmail.com");
 
         //TODO: Выбрать пол
-
+        WebElement radio = driver.findElement(By.xpath("//*[@id='gender-radio-1']/.."));
+        radio.click();
         //TODO: Выбрать количество лет опыта
 
         //TODO: Заполнить поле дата
