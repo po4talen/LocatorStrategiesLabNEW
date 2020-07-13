@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
 
 
 public class Lab
@@ -41,13 +42,20 @@ public class Lab
 
         //TODO: Заполнить поле Last name:
         driver.findElement(By.cssSelector("#lastName")).sendKeys("Bob");
+        // TODO: Заполнить поле Email
         driver.findElement(By.id("userEmail")).sendKeys("Po4ta@gmail.com");
 
         //TODO: Выбрать пол
         WebElement radio = driver.findElement(By.xpath("//*[@id='gender-radio-1']/.."));
         radio.click();
-        //TODO: Выбрать количество лет опыта
 
+        //TODO: Заполнить поле Phone
+        driver.findElement(By.xpath("/html//input[@id='userNumber']")).sendKeys("09912345678");
+        //TODO: Выбрать дату рождения
+        driver.findElement(By.cssSelector("input#dateOfBirthInput")).click();
+       //WebElement dropdownMounth = driver.findElement(By.cssSelector(".react-datepicker__month-select"));
+        Select selecvalue = new Select(driver.findElement(By.cssSelector(".react-datepicker__month-select")));
+        selecvalue.selectByValue("February");
         //TODO: Заполнить поле дата
 
         //TODO: Выбрать несколько Automation Tool
