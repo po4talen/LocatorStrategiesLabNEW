@@ -53,7 +53,10 @@ public class Lab
         driver.findElement(By.xpath("/html//input[@id='userNumber']")).sendKeys("09912345678");
         //TODO: Выбрать дату рождения
         driver.findElement(By.cssSelector("input#dateOfBirthInput")).click();
+        WebElement Calendar = driver.findElement(By.xpath("//div[@id='dateOfBirth']/div[@class='react-datepicker__tab-loop']/div[@class='react-datepicker-popper']//div[@class='react-datepicker__month-container']"));
+
        //WebElement dropdownMounth = driver.findElement(By.cssSelector(".react-datepicker__month-select"));
+        Calendar.findElement()
         Select selecvalue = new Select(driver.findElement(By.cssSelector(".react-datepicker__month-select")));
         selecvalue.selectByValue("February");
         //TODO: Заполнить поле дата
