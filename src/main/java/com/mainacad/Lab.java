@@ -32,7 +32,7 @@ public class Lab {
     private static final By ADDRESS = By.id("currentAddress");
     private static final By STATE = By.cssSelector("div#state .css-1wa3eu0-placeholder");
     private static final By SUBMIT = By.id("submit");
-
+    public static final By CLOSE = By.id("closeLargeModal");
 
     public static void main(String[] args) {
         //Создаём системную переменную которая содержит путь к драйверу
@@ -98,10 +98,13 @@ public class Lab {
         state.sendKeys(Keys.ENTER);
         //TODO: Кликнуть на кнопку Button Submit
         WebElement submit = driver.findElement(SUBMIT);
-      //  js.executeScript("arguments[0].scrollIntoView();", submit);  почему не работает
+        //  js.executeScript("arguments[0].scrollIntoView();", submit);  почему не работает
         submit.click();
 
         //TODO: Закрыть браузер
+        WebElement close = driver.findElement(CLOSE);
+        close.click();
 
+        driver.close();
     }
 }
